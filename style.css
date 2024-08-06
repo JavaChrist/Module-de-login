@@ -52,6 +52,23 @@ img {
   height: auto;
 }
 
+/* Style pour les champs de formulaire en remplissage automatique */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--white-color); /* Change le texte en blanc */
+  -webkit-box-shadow: 0 0 0px 1000px hsla(0, 0%, 10%, 0.1) inset; /* Utilise la même couleur que l'arrière-plan */
+  box-shadow: 0 0 0px 1000px hsla(0, 0%, 10%, 0.1) inset; /* Assure une compatibilité avec les navigateurs */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /* LOGIN */
 .login {
   position: relative;
@@ -207,6 +224,27 @@ img {
 .login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
   top: -12px;
   font-size: var(--font-medium);
+}
+
+/* TOGGLE BUTTONS */
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: var(--white-color);
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-medium);
+}
+
+.toggle-button.active {
+  border-bottom: 2px solid var(--white-color);
 }
 
 /* BREAKPOINTS */
