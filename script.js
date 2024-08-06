@@ -22,4 +22,36 @@ const showHiddenPass = (loginPass, loginEye) => {
         }
     })
 }
+
 showHiddenPass('login-pass', 'login-eye')
+showHiddenPass('register-pass', 'register-eye')
+
+// TOGGLE BETWEEN LOGIN AND REGISTER FORMS
+const loginToggle = document.getElementById('loginToggle');
+const registerToggle = document.getElementById('registerToggle');
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const showRegisterForm = document.getElementById('showRegisterForm');
+const showLoginForm = document.getElementById('showLoginForm');
+
+loginToggle.addEventListener('click', () => {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+});
+
+registerToggle.addEventListener('click', () => {
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+});
+
+showRegisterForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+});
+
+showLoginForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+});
